@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>IziJob Servicios</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body class="m-5">
+  <h2>Resumen</h2>
+	<table class="table table-dark">
+		<thead class="thead-light">
+			<tr>
+				<th scope="col">Path</th>
+				<th scope="col">Operación</th>
+				<th scope="col">Descripción</th>
+			</tr>
+		</thead>
+		<tbody>
+      <tr>
+        <td><a>empleoVista</a></td>
+        <td>FirebaseDatabase.instance.reference().child("Empleo")</td>
+        <td>Obtener los detalles de los Empleos publicados</td>
+      </tr>
+      <tr>
+        <td>publicarEmpleo</td>
+        <td>FirebaseDatabase.instance.reference().child("Empleo").push().set(data)</td>
+        <td>Publicar los empleos en la base de datos</td>
+      </tr>
+      <tr>
+        <td>empleoVista/filtrarEmpleo</td>
+        <td>empleoList
+          .where((empleos) =>
+              empleos.categoria.toLowerCase().contains(value.toLowerCase()))
+          .toList();</td>
+        <td>Filtra y carga en la lista aquellos empleos cuya categoría sea igual al value del TextFormField</td>
+      </tr>
+      <tr>
+        <td>cachueloVista</a></td>
+        <td>FirebaseDatabase.instance.reference().child("Cachuelo")</td>
+        <td>Obtener los detalles de los Cachuelos publicados</td>
+      </tr>
+      <tr>
+        <td>publicarCachuelo</td>
+        <td>FirebaseDatabase.instance.reference().child("Cachuelo").push().set(data)</td>
+        <td>Publicar los cachuelos en la base de datos</td>
+      </tr>
+      <tr>
+        <td>cachueloVista/filtrarCachuelo</td>
+        <td>cachueloList
+          .where((cachuelos) =>
+              cachuelos.categoria.toLowerCase().contains(value.toLowerCase()))
+          .toList();</td>
+        <td>Filtra y carga en la lista aquellos cachuelos cuya categoría sea igual al value del TextFormField</td>
+      </tr>
+      <tr>
+        <td>contactarVista</a></td>
+        <td>FirebaseDatabase.instance.reference().child("Contacto")</td>
+        <td>Obtiene los detalles de los Contactos publicados</td>
+      </tr>      
+      <tr>
+        <td>publicarContacto</a></td>
+        <td>FirebaseDatabase.instance.reference().child("Contacto").push().set(data)</td>  
+        <td>Publica los contactos en la base de datos</td>
+      </tr> 
+      <tr>
+        <td>contactarVista/filtrarContacto</a></td>
+        <td>contactosFiltrados = contactarlist
+          .where((contactos) =>
+              contactos.categoria.toLowerCase().contains(value.toLowerCase()))
+          .toList();</td>  
+        <td>Filtra en la lista aquellos contactos cuya categoría sea igual al valor dentro del TextFormField</td>
+      </tr>       
+    
+
+
+
+		</tbody>
+	</table>
+	<script src="script.js">
+	</script>
+</body>
+
+</html>
